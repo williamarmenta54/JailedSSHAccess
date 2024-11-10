@@ -41,8 +41,31 @@ sleep 2
 netstat -ntlp
 sleep 2
 
-wget -q https://github.com/ekzhang/bore/releases/download/v0.5.1/bore-v0.5.1-x86_64-unknown-linux-musl.tar.gz
+curl -s https://github.com/fatedier/frp/releases/download/v0.48.0/frp_0.48.0_linux_amd64.tar.gz -L -O -J
+tar -xvf frp_0.48.0_linux_amd64.tar.gz
+# start from daemon
+cp frp_0.48.0_linux_amd64/frpc /usr/bin
+mkdir /etc/frp
+mkdir /var/frp  # log
+
 sleep 2
-tar -xf bore-v0.5.1-x86_64-unknown-linux-musl.tar.gz
+
+cat > /etc/frp/frpc.ini <<END
+[common]
+server_addr = emergencyaccess.teatspray.fun
+server_port = 7000
+
+[ssh.manojamcunukelwamybinder]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 2222
+remote_port = 12302
+subdomain = manojamcunukelwamybinder
+
+END
+
 sleep 2
-./bore local 2299 --local-host 0.0.0.0 --to emergencyaccess.teatspray.fun --secret IhatePopUpsWut@1Ozegnos
+
+#manojamcunukelwamybinder.emergencyaccess.teatspray.fun
+
+/usr/bin/frpc -c /etc/frp/frpc.ini
