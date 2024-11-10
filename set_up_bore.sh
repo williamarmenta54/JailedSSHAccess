@@ -58,8 +58,8 @@ server_port = 80
 [ssh.manojamcunukelwamybinder]
 type = tcp
 local_ip = 127.0.0.1
-local_port = 2222
-remote_port = 12222
+local_port = 2299
+remote_port = 12299
 subdomain = manojamcunukelwamybinder
 
 END
