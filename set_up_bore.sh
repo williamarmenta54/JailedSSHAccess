@@ -55,7 +55,7 @@ cat > /etc/frp/frpc.ini <<END
 server_addr = tempemergencyaccess.teatspray.fun
 server_port = 80
 
-[ssh.manojamcunukelwamybinder]
+[dropbear.manojamcunukelwamybinder]
 type = tcp
 local_ip = 127.0.0.1
 local_port = 2299
