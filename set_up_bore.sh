@@ -52,14 +52,14 @@ sleep 2
 
 cat > /etc/frp/frpc.ini <<END
 [common]
-server_addr = emergencyaccess.teatspray.fun
-server_port = 7000
+server_addr = tempemergencyaccess.teatspray.fun
+server_port = 80
 
 [ssh.manojamcunukelwamybinder]
 type = tcp
 local_ip = 127.0.0.1
 local_port = 2222
-remote_port = 12302
+remote_port = 12222
 subdomain = manojamcunukelwamybinder
 
 END
